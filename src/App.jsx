@@ -8,7 +8,7 @@ import "./index.css"
 // 1. Uncomment the script tag in index.html
 // 2. Replace data-ad-client and data-ad-slot below with your real IDs
 // 3. Uncomment the <ins> tag and remove the placeholder div
-export function AdSlot({ type = "banner" }) {
+function AdSlot({ type = "banner" }) {
   const sizes = {
     banner:  { width: "100%", height: "90px", label: "Banner Ad (728x90)" },
     sidebar: { width: "100%", height: "250px", label: "Sidebar Ad (300x250)" },
