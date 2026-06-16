@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react"
-import { AdSlot } from "../App"
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
@@ -82,6 +81,23 @@ function CookiesPanel() {
         </div>
       )}
       {msg && <p className="cookies-msg">{msg}</p>}
+    </div>
+  )
+}
+
+
+function AdSlot({ type = "banner" }) {
+  const sizes = {
+    banner:  { height: "90px",  label: "Banner Ad (728x90)" },
+    sidebar: { height: "250px", label: "Sidebar Ad (300x250)" },
+  }
+  const s = sizes[type]
+  return (
+    <div className={`ad-slot ad-slot-${type}`} style={{minHeight: s.height}}>
+      <div className="ad-placeholder">
+        <span>{s.label}</span>
+        <small>Ad space — AdSense pending approval</small>
+      </div>
     </div>
   )
 }
